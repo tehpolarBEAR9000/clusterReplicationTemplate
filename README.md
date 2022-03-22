@@ -1,15 +1,18 @@
-# clusterReplicationTemplate
+Overview
+- Defines an existing EKS cluster  
+- Replicates the existing cluster into a staging environment  
 
-This is an example of replication an EKS cluster from one environment to another.  
+Components
+- Cloudformation  
+- Breaks default parallel flow by using 'Depends-On' flags and 'Ref'  
+- Secrets Manager  
+- IAM  
+- ECR  
+- EKS 
 
-# Overview  
-- The parameter list details networking and naming details.  
-- Resources are run by default in parallel. The 'Depends-On' flag and 'Ref' are used for control flow.  
-
-# Output  
+Output
 - IAM User  
 - Secret in Secrets Manager  
-- ECR Respository  
-- Node + Cluster role and policy
-- Builds two node groups (one for spot and one for reserved types)
-- EKS Cluster
+- Two ECR Respositories  
+- Node + Cluster role and policy  
+- Builds one spot node group and one reserved node type group    
